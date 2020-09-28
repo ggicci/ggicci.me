@@ -45,7 +45,11 @@ Author:
   name: Ggicci
   bio: TO THINE OWN SELF BE TRUE
   avatar: "https://avatars2.githubusercontent.com/u/3077555"
+
 Params: # https://github.com/Vimux/Mainroad
+  logo:
+    image: "favicon.ico"
+    subtitle: ""
   style:
     vars:
       highlightColor: "#b10406"
