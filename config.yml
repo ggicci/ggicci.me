@@ -25,11 +25,30 @@ markup:
       hardWraps: false
       unsafe: true
       xhtml: false
+  highlight:
+    guessSyntax: false
+    lineNos: false
+    hl_Lines: "" # used to highlight lines
+    anchorLineNos: false
+    lineAnchors: ""
+    lineNumbersInTable: false
+    noClasses: true
+    style: dracula
+    tabWidth: 2
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+    ordered: false
+enableEmoji: true
+
 Author:
   name: Ggicci
   bio: TO THINE OWN SELF BE TRUE
   avatar: "https://avatars2.githubusercontent.com/u/3077555"
 Params: # https://github.com/Vimux/Mainroad
+  style:
+    vars:
+      highlightColor: "#b10406"
   description: Ggicci's personal blog about life and coding...
   copyright: GGICCI
   opengraph: true
