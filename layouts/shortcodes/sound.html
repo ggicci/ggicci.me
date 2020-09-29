@@ -1,0 +1,14 @@
+{{ with .Get 0 }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.core.min.js"></script>
+<script type="text/javascript">
+  const sound = new Howl({
+    src: [
+      'https://ggicci-me.oss-cn-shanghai.aliyuncs.com/public/audio/{{ . }}',
+    ],
+    autoplay: true,
+    loop: true,
+    volume: 0.5,
+  })
+  sound.play()
+</script>
+{{ end }}

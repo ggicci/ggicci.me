@@ -18,7 +18,7 @@ widgets:
   - recent
 ---
 
-{{<audio "Moratorium - Omoinotake.mp3" >}}
+{{<sound "Moratorium - Omoinotake.mp3" >}}
 
 :man_technologist: Full Stack Engineer at [Wish](https://www.wish.com). Former Back End Engineer at [Alibaba Cloud](https://www.aliyun.com). And here's my [stack](https://stackshare.io/ggicci/my-full-stack).
 
