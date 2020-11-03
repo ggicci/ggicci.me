@@ -6,4 +6,3 @@ command = "hugo --gc --minify"
 HUGO_VERSION = "0.75.1"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
-

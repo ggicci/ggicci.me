@@ -1,5 +1,7 @@
 baseURL: "https://ggicci.me/"
 languageCode: en-us
+enableGitInfo: true
+enableEmoji: true
 title: GGICCI
 theme: mainroad
 paginate: 10
@@ -39,7 +41,6 @@ markup:
     startLevel: 2
     endLevel: 3
     ordered: false
-enableEmoji: true
 
 Author:
   name: Ggicci
@@ -70,7 +71,7 @@ Params: # https://github.com/Vimux/Mainroad
   mainSections:
     - posts
   dateformat: "2006-01-02"
-  mathjax: true
+  mathjax: false
   mathjaxPath: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js"
   mathjaxConfig: TeX-AMS-MML_HTMLorMML
   googleFontsLink: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"
