@@ -18,14 +18,28 @@ widgets:
   - recent
 ---
 
-<style>
-.selfie > img {
-  border: 2px solid black;
-}
-</style>
-
+<!--
 {{<sound "Moratorium - Omoinotake.mp3" >}}
+-->
 
-:man_technologist: [Full Stack Engineer](https://stackshare.io/ggicci/my-full-stack) at [Wish](https://www.wish.com). Former Back End Engineer at [Alibaba Cloud](https://www.aliyun.com).
+Hi, there~ 👋
 
-{{<figure src="./selfie-01.jpg" alt="Ggicci" width="368px" class="selfie" >}}
+## I am
+
+- Full Stack Engineer at [Wish](https://www.wish.com).
+- Former Back End Engineer at [Alibaba Cloud](https://www.aliyun.com).
+
+You can call me _Ggicci_.
+
+## I Love
+
+- 👨🏻‍💻 **Coding**
+- 🏋️ [**Working out**](https://www.instagram.com/stories/highlights/17863871374836602/)
+- ☕ [**Coffee**](https://www.instagram.com/stories/highlights/17961657733355721/)
+- 🍳 **Cooking**
+- 📚 **Reading**
+- 🏝 [**Traveling**](https://www.instagram.com/stories/highlights/17849365495445038/)
+- 🎮 **Gaming**
+- 🐱 **Cats**
+- 🐶 **Dogs**
+- 🧜‍♂️ **Men**
