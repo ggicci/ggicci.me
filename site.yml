@@ -1,0 +1,47 @@
+---
+- name: "Build and Deploy Website"
+  hosts: stone
+  vars:
+    site: "ggicci.me"
+    version: "{{ version_out.stdout }}"
+    dist: "{{ site }}.{{ version }}"
+    remote_dir: "/home/ggicci/docker/caddy/www"
+  pre_tasks:
+    - name: get version
+      delegate_to: localhost
+      ansible.builtin.shell: |
+        get_commit() { git rev-parse --short HEAD; }
+        get_dirty() { test -n "`git status --porcelain`" && echo "+CHANGES" || true; }
+        echo "$( get_commit )""$( get_dirty )"
+      register: version_out
+  tasks:
+    - name: "build site with hugo [version: {{ version }}]"
+      delegate_to: localhost
+      ansible.builtin.shell: hugo
+    - name: compress dist
+      delegate_to: localhost
+      ansible.builtin.shell: |
+        mv "public" "{{ dist }}"
+        tar zcf "{{ dist }}.tar.gz" "{{ dist }}"
+    - name: copy to remote
+      ansible.builtin.copy:
+        src: "{{ dist }}.tar.gz"
+        dest: "{{ remote_dir }}"
+    - name: active remote website
+      ansible.builtin.shell: |
+        cd "{{ remote_dir }}"
+        tar zxf "{{ dist }}.tar.gz"
+        ln -nsf "{{ dist }}" "{{ site }}"
+  post_tasks:
+    - name: "clean up [remote]"
+      ansible.builtin.file:
+        path: "{{ remote_dir }}/{{ dist }}.tar.gz"
+        state: absent
+    - name: "clean up [local]"
+      delegate_to: localhost
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - "{{ dist }}"
+        - "{{ dist }}.tar.gz"
