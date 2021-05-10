@@ -1,14 +1,12 @@
 ---
 title: "Reduce Docker Image Size by Using Multi-stage Builds"
 date: 2018-10-13 22:40:20 +0800
-# summary: "If you don't take any optimization measures, docker images can easily get large. And in most cases we just wrapped too many inessential things into the images. So, we should take actions to get rid of it."
+summary: "If you don't take any optimization measures, docker images can easily get large. And in most cases we just wrapped too many inessential things into the images. So, we should take actions to get rid of it."
 categories:
   - docker
 tags:
   - docker
   - dockerfile
-# mainroad
-# thumbnail: images/placeholder.png
 ---
 
 If you don't take any optimization measures, docker images can easily get large. And in most cases we just wrapped too many inessential things into the images. So, we should take actions to get rid of it.

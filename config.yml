@@ -53,7 +53,7 @@ Params: # https://github.com/Vimux/Mainroad
     subtitle: ""
   style:
     vars:
-      highlightColor: "#b10406"
+      highlightColor: "#d50000"
   description: Ggicci's personal blog about life and coding...
   copyright: GGICCI
   opengraph: true
