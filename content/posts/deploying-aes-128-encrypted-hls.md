@@ -111,7 +111,7 @@ Because VLC tried to retrieve the key file from this URI https://ksm.ggicci.me/e
 
 Let's serve our key file `enc.key` on a web server and make it accessible from the URI above. Then go back to check if VLC can play this `sample.m3u8`.
 
-I recommend using [Caddy](https://caddyserver.com/) to start up a web server. Which should be easy to learn. Example configs in the Caddyfile:
+I recommend using [Caddy](https://caddyserver.com/) to start up a web server. Which should be easy to learn. Sample site config of the Caddyfile:
 
 ```Caddyfile
 ksm.ggicci.me {
@@ -151,7 +151,7 @@ v.ggicci.me {
 
   file_server {
     root /var/www/v.ggicci.me
-    index index.html index.txt index.pdf
+    index index.html
   }
 }
 ```
@@ -196,7 +196,31 @@ With a little research on its official documentation. We can compose a test HTML
 </body>
 ```
 
-Visit it at v.ggicci.me. Also try opening it on your phone.
+Since we need to read encryption key files from `ksm.ggicci.me` on `v.ggicci.me`. We will meet [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) problem. Solving it by adding corresponding headers to `ksm.ggicci.me`'s site configurations:
+
+```Caddyfile
+ksm.ggicci.me {
+  log {
+    level INFO
+  }
+
+  tls {
+    alpn http/1.1
+  }
+
+  file_server {
+    root /var/www/ksm.ggicci.me
+  }
+
+  header {
+    Vary "Origin"
+    Access-Control-Allow-Origin "https://v.ggicci.me"
+    Access-Control-Allow-Methods "OPTIONS, HEAD, GET"
+  }
+}
+```
+
+Visit v.ggicci.me to see the result. Also try it with your mobile devices :)
 
 ## Architecture
 
