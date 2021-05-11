@@ -226,8 +226,6 @@ Visit v.ggicci.me to see the result. Also try it with your mobile devices :)
 
 ![AES-128 Encrypted HLS Architecture](/images/hls-arch.png)
 
-TODO(@ggicci): ...
-
 ## References
 
 - [Apple Developer - HTTP Live Streaming](https://developer.apple.com/streaming/)
