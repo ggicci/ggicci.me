@@ -10,23 +10,10 @@ tags:
   - "vod"
   - "hls"
   - "ffmpeg"
+  - "video.js"
 # url: relative-url
 # aliases:
 #   - alias-url-1
-# draft: true
-# menu: main, side, footer
-
-# theme: mainroad
-# thumbnail: images/placeholder.png
-# lead: "Lead text"
-# comments: true # enable disqus comments for specific page
-# authorbox: true # enable authorbox for specifc page
-# pager: true # enable pager navigation (prev/next) for specific page
-# toc: true # enable Table of Contents for specific page
-# mathjax: true # enable MathJax for specific page
-# sidebar: "right" # enable sidebar, opts: left, right
-# widgets: [ "recent", "categories", "taglist", "social", "languages" ] # enable sidebar widgets in given order
-# theme: mainroad
 ---
 
 **HTTP Live Streaming** (HLS) is an HTTP-based adaptive bitrate streaming communications protocol developed by Apple Inc. and released in 2009.
@@ -34,7 +21,7 @@ tags:
 Some key points of HLS:
 
 0. Created by Apple.
-1. Consists of a manifest file (e.g. playlist.m3u8) and chunks of video segment files (e.g. seq0.ts).
+1. Consists of a playlist/manifest file (e.g. index.m3u8) and segment video files (e.g. index01.ts).
 2. H264 codec of video + AAC of audio.
 3. Use HTTP, easily leveraging CDN to reach the widest audience without worring about the bandwidth and firewalls.
 4. Adaptive streaming, enables changing the quality of the video mid-stream.
@@ -47,11 +34,11 @@ Let's start from an sample video, which can be downloaded from [vimeo](https://v
 1. Convert the sample video from MP4 to HLS (a `.m3u8` playlist file and `.ts` segment files) with AES-128 encryption method;
 2. Serve the key files on a **key server**;
 3. Serve the HLS files on a **content server**;
-4. Test it with [VLC player](https://www.videolan.org/vlc/) and [video.js](https://videojs.com/).
+4. Test the deployment with [VLC player](https://www.videolan.org/vlc/) and [video.js](https://videojs.com/).
 
 ## 🔄 Transcode (MP4 -> HLS)
 
-The original sample video was in `.mp4` format. While we need HLS files to serve with. We can use [`ffmpeg`](https://www.ffmpeg.org/) do the transcoding.
+The original sample video was in `.mp4` format. While we need HLS files to serve with. We can use [`ffmpeg`](https://www.ffmpeg.org/) to do the transcoding.
 
 **Without AES-128**, we can simply run the following command:
 
@@ -61,7 +48,7 @@ The original sample video was in `.mp4` format. While we need HLS files to serve
 ffmpeg -i sample-video.mp4 -codec: copy -start_number 0 -hls_time 10 -hls_list_size 0 -f hls sample-noaes.m3u8
 ```
 
-Open `sample-noaes.m3u8` with VLC player, you should see it could play well.
+Open `sample-noaes.m3u8` with VLC player. You should see it playing well.
 
 **With AES-128**, we need to firstly generate an encryption key and an optional IV (initialization vector) for the AES algorithm.
 
@@ -79,7 +66,7 @@ Path to the key file
 IV (optional)
 ```
 
-e.g. `enc.keyinfo`:
+Which is used by `ffmpeg`. e.g. `enc.keyinfo`:
 
 ```text
 https://ksm.ggicci.me/e9672408-b38b-4465-ab47-519c554ae402/enc.key
@@ -103,15 +90,13 @@ ffmpeg \
   sample.m3u8 # HLS playlist (aka. HLS manifest)
 ```
 
-This time, open `sample.m3u8` with VLC, it shouldn't work.
-
-Because VLC tried to retrieve the key file from this URI https://ksm.ggicci.me/e9672408-b38b-4465-ab47-519c554ae402/enc.key but it failed. Since we don't have this **key server** ready, yet.
+Open `sample.m3u8` with VLC. It **won't** play. Because VLC tried to retrieve the key file from this URI https://ksm.ggicci.me/e9672408-b38b-4465-ab47-519c554ae402/enc.key as noted in `sample.m3u8`. But it failed. Since we don't have this **key server** ready, yet.
 
 ## 🔑 Start a Key Server
 
 Let's serve our key file `enc.key` on a web server and make it accessible from the URI above. Then go back to check if VLC can play this `sample.m3u8`.
 
-I recommend using [Caddy](https://caddyserver.com/) to start up a web server. Which should be easy to learn. Sample site config of the Caddyfile:
+I recommend using [Caddy](https://caddyserver.com/) to start up a web server. Which should be easy to learn. Sample site configuration in the Caddyfile:
 
 ```Caddyfile
 ksm.ggicci.me {
@@ -129,13 +114,13 @@ ksm.ggicci.me {
 }
 ```
 
-Let's open `sample.m3u8` again, and this time it should work. Since the key URI became accessible.
+Copy file `enc.key` to our web server in the path specified by the URI. And open `sample.m3u8` again. This time it should work, since the key URI became accessible.
 
 ![VLC Opens HLS Playlist](/images/vlc-open-sample-m3u8.png)
 
 ## 🎞️ Start a Content Server
 
-So far, our encryption keys had been served well on our key server. As long as we move our video content to a web server, too. We can consume our videos online with assistance of video players. We call it a **Content Server**.
+So far, our encryption key file has been served well on our key server. As long as we move our video content to a web server, too. We can consume our videos online with assistance of video players. We call it a **Content Server**.
 
 Again, we use Caddy to achieve our goal:
 
@@ -156,7 +141,7 @@ v.ggicci.me {
 }
 ```
 
-I give my `sample.m3u8` a new name `/sample/index.m3u8` and it's now accessible at https://v.ggicci.me/sample/index.m3u8. Try open it with VLC player (Media > Open Network Stream...). It should work like a charm.
+Copy the playlist file and segment files to the web server. Under `/sample` folder in my case. And it's now accessible at https://v.ggicci.me/sample/index.m3u8. Try open it with VLC player (Media > Open Network Stream...). It should work like a charm.
 
 ## 📺 Use of video.js
 
@@ -179,10 +164,10 @@ With a little research on its official documentation. We can compose a test HTML
     controls
     preload="auto"
     height="420"
-    poster="sample/cover.png"
+    poster="/sample/cover.png"
     data-setup="{}"
   >
-    <source src="sample/index.m3u8" type="application/x-mpegURL" />
+    <source src="/sample/index.m3u8" type="application/x-mpegURL" />
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a
       web browser that
@@ -220,7 +205,7 @@ ksm.ggicci.me {
 }
 ```
 
-Visit v.ggicci.me to see the result. Also try it with your mobile devices :)
+Visit https://v.ggicci.me/sample to see the result. Also try it with your mobile devices :)
 
 ## Architecture
 
