@@ -22,7 +22,7 @@ I'm using `github.com/gorilla/mux` as a sample repository to which I'm going to 
 1. On github, fork it to my github account as `github.com/ggicci/mux`.
 2. Clone the repository to local: `git clone git@github.com:gorilla/mux.git`.
 3. Rename remote `origin` to `upstream`: `git remote rename origin upstream`.
-4. Add the URL of my forked repo as the `origin` remote: `git remote add origin git@github.com/ggicci/mux.git`.
+4. Add the URL of my forked repo as the `origin` remote: `git remote add origin git@github.com:ggicci/mux.git`.
 5. Make some changes and commit: `git commit ...`.
 6. Push the commits to my forked repo: `git push origin ...`.
 7. On github, open a pull request from `ggicci` to `gorilla`.
