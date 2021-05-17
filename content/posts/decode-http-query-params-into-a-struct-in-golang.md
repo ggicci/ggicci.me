@@ -51,9 +51,9 @@ func ListUsers(rw http.ResponseWriter, r *http.Request) {
 
 It's okay if there are only a few (usually less than 3) parameters to be parsed. But what if more? Both the number of lots of local variables and the writing of statements of parsing string URL params to target types can kill us. Some "evil" guys even spread these statements all over in an API handler. 🤒
 
-For such cases, what can we do to save clean an tidy code base?
+For such cases, what can we do to save a clean and tidy code base?
 
-### 1. Reduce the number of local variables.
+### 1. Reduce the number of local variables
 
 We can define a custom struct to gather all the parameters together as struct fields to **reduce the number of local variables from N to 1**.
 
@@ -71,7 +71,7 @@ At this time, the above three local variables `page`, `perPage` and `isMember` b
 
 However, even if we put all the parameters together, we still can't get rid of writing the parsing stuff code. Which again challenges the code readability.
 
-### 2. Implement a generic function to do the parsing stuff.
+### 2. Implement a generic function to do the parsing stuff
 
 Can we implement a function to parse the URL params automatically for us? Once this is feasible, all the redundant parsing stuff code can be removed. The code base will finally become clean and tidy. Sample code:
 
@@ -97,8 +97,6 @@ See the implementation details at [httpin](https://github.com/ggicci/httpin) pac
 > **httpin** - HTTP Input for Go - Decode an HTTP request into a custom struct
 
 The only thing you need to do while using `httpin` is: **well define your input struct** for receiving the URL params. You don't need to write parsing code for each parameter by yourself. You only care about the input struct and in which handler it will be used.
-
-Show case:
 
 ```go
 // 1. Define you input struct
