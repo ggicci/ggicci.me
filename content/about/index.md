@@ -42,4 +42,3 @@ You can call me _Ggicci_.
 - 🎮 **Gaming**
 - 🐱 **Cats**
 - 🐶 **Dogs**
-- 🧜‍♂️ **Men**

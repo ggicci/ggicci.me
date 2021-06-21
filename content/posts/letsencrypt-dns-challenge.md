@@ -6,10 +6,10 @@ thumbnail: ""
 aliases:
   - letsencrypt-dns-challenge
 categories:
-  - "letsencrypt"
-tags:
-  - "letsencrypt"
   - "ssl"
+tags:
+  - "ssl"
+  - "letsencrypt"
 draft: true
 ---
 

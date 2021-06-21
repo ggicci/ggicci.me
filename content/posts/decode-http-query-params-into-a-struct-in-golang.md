@@ -1,7 +1,7 @@
 ---
 title: "Decode HTTP Query Params Into a Struct in Golang"
 date: "2021-05-17T11:34:14+08:00"
-description: "Use httpin package to decode an HTTP request in the way you like."
+description: "Use httpin package to decode HTTP request params into a struct in Go."
 thumbnail: ""
 categories:
   - "go"
