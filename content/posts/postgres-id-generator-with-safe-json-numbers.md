@@ -80,7 +80,7 @@ This algorithm will generate an integer in `64` bits consisting of:
 
 Here we can expand `Seq ID` part to gain the ablility of supporting more operations per ms. But as a trade off, the `Shard ID` will be shrunk.
 
-For example, if we used `10` bits for `Shard ID` and `13` bits for `Seq ID`, we will allow `8192` write operations per ms. Which should be `819k ops/s`. However, **as a reminder**, this `819k ops/s` is **evenly distributed** over 1s. Which means when your system had a writing spike with over 8192 writes in the same millisecond, it can fail.
+For example, if we used `10` bits for `Shard ID` and `13` bits for `Seq ID`, we will allow `8192` write operations per ms. Which should be `8M ops/s`. However, **as a reminder**, this `8M ops/s` is **evenly distributed** over 1s. Which means when your system had a writing spike with over 8192 writes in the same millisecond, it can fail.
 
 ## Safe Number Problem in JSON
 
