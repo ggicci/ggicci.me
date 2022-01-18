@@ -1,5 +1,5 @@
 ---
-title: "Decode HTTP Query Params Into a Struct in Golang"
+title: "Decode HTTP Query Params into a Struct in Go"
 date: "2021-05-17T11:34:14+08:00"
 description: "Use httpin package to decode HTTP request params into a struct in Go."
 thumbnail: ""
@@ -20,9 +20,7 @@ tags:
 # theme: mainroad
 ---
 
-Many people use `net/http` package directly in Go to deal with HTTP requests, including reading URL parameters, HTTP headers, and the request body. It's straightforward and efficient, though. We can still get bored writing so much tedious code for just reading and parsing the URL params. Typically when we are maintaining a service with hundres of APIs.
-
-## Parse URL Params with `net/http`
+Many people use `net/http` package directly in Go to deal with HTTP requests, including reading URL parameters, HTTP headers, and the request body. It's straightforward and efficient, though. We can still get bored writing so much tedious code for just reading and parsing the URL params. Especially when we were maintaining a service with hundres of APIs.
 
 Let's see a piece of code for dealing with HTTP requests by using `net/http` package:
 
@@ -53,50 +51,22 @@ It's okay if there are only a few (usually less than 3) parameters to be parsed.
 
 For such cases, what can we do to save a clean and tidy code base?
 
-### 1. Reduce the number of local variables
+## Use `ggicci/httpin`
 
-We can define a custom struct to gather all the parameters together as struct fields to **reduce the number of local variables from N to 1**.
+> [**httpin**](https://github.com/ggicci/httpin) - 🍡 HTTP Input for Go - Decode an HTTP request into a custom struct
 
-```go
-type ListUsersInput struct {
-	Page     int  `in:"form=page"`
-	PerPage  int  `in:"form=per_page"`
-	IsMember bool `in:"form=is_member"`
-}
+**ggicci/httpin** is an awesome package which helps you easily decoding HTTP reqeusts from:
 
-input := &ListUserInput{}
-```
+- Query string (URL parameters), e.g. `?name=john&is_member=true`
+- Headers, e.g. `Authorization: xxx`
+- Form data, e.g. `login=john&password=*****`
+- JSON/XML body, e.g. `POST {"name": "john", "is_member": true}`
+- Path variables, e.g. `/users/{username}`
+- File uploads
 
-At this time, the above three local variables `page`, `perPage` and `isMember` became one variable `input`.
+You don't need to write parsing code for each parameter by yourself. You only care about the input struct and in which handler it will be used.
 
-However, even if we put all the parameters together, we still can't get rid of writing the parsing stuff code. Which again challenges the code readability.
-
-### 2. Implement a generic function to do the parsing stuff
-
-Can we implement a function to parse the URL params automatically for us? Once this is feasible, all the redundant parsing stuff code can be removed. The code base will finally become clean and tidy. Sample code:
-
-```go
-func ListUsers(rw http.ResponseWriter, r *http.Request) {
-	input := &ListUserInput{}
-	if err := ParseURLParams(&input); err != nil {
-		return
-	}
-
-	if input.IsMember // ...
-}
-```
-
-Now the above three parsing statements `... := strconv.ParseXXX(...)` became one statement `ParseURLParams(&input)`.
-
-So, how to implement this magic function `ParseURLParams`? It's not that hard. Since we have defined a struct. We can utilize [struct tags](https://flaviocopes.com/go-tags/) to guide the parsing algorithm. And use [go reflect](https://pkg.go.dev/reflect) to adapt this algorithm to different types of structs dynamically.
-
-See the implementation details at [httpin](https://github.com/ggicci/httpin) package by Ggicci.
-
-## Use of `httpin`
-
-> **httpin** - HTTP Input for Go - Decode an HTTP request into a custom struct
-
-The only thing you need to do while using `httpin` is: **well define your input struct** for receiving the URL params. You don't need to write parsing code for each parameter by yourself. You only care about the input struct and in which handler it will be used.
+Let's see an example:
 
 ```go
 // 1. Define you input struct
@@ -119,4 +89,13 @@ func ListUsers(rw http.ResponseWriter, r *http.Request) {
 }
 ```
 
-Happy? 😝
+You will find that with the help of **httpin**, you can get the following benefits:
+
+- ⌛️ Saving developer time
+- ♻️ Lower code repetition rate
+- 📖 Higher readability
+- 🔨 Higher maintainability
+
+**httpin** is well documentated at https://ggicci.github.io/httpin/.
+
+❤️ Have a try with it :)
