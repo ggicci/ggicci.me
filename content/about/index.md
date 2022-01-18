@@ -13,6 +13,7 @@ menu: main
 toc: false
 sidebar: right
 authorbox: false
+pager: false
 widgets:
   - social
   - recent

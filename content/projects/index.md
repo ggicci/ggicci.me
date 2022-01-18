@@ -10,6 +10,8 @@ draft: false
 # mainroad
 menu: main
 toc: false
+authorbox: false
+pager: false
 ---
 
 ## My Open Source Projects
