@@ -24,16 +24,16 @@ widgets:
 
 Hi, there~ 👋
 
+I'm **Ggicci** /ˈdʒiːtʃi/. Welcome to my personal blog.
+
 ## I am
 
 - Full Stack Engineer at [Wish](https://www.wish.com).
 - Former Back End Engineer at [Alibaba Cloud](https://www.aliyun.com).
 
-You can call me _Ggicci_.
-
 ## I Love
 
-- 👨🏻‍💻 **Coding**
+- 👨🏻‍💻 **Coding** (I'm an **OSS lover** and contributor. [see my projects](/projects))
 - 🏋️ [**Working out**](https://www.instagram.com/stories/highlights/17863871374836602/)
 - ☕ [**Coffee**](https://www.instagram.com/stories/highlights/17961657733355721/)
 - 🍳 **Cooking**
