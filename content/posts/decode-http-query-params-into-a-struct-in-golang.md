@@ -50,15 +50,15 @@ func ListUsers(rw http.ResponseWriter, r *http.Request) {
 }
 ```
 
-It's okay if there are only a few (usually less than 3) parameters to be parsed. But what if more? Both the number of lots of local variables and the writing of statements of parsing string URL params to target types can kill us. Some "evil" guys even spread these statements all over in an API handler. 🤒
+It's okay if there are only a few (usually less than 3) parameters to be parsed. But what if more? Both the number of lots of local variables and the writing of statements of parsing string URL params to target types can kill us. Someone even spreads these statements all over in an API handler. 🤒
 
 For such cases, what can we do to save a clean and tidy code base?
 
-## Use `ggicci/httpin`
+## Using `ggicci/httpin`
 
 > [**httpin**](https://github.com/ggicci/httpin) - 🍡 HTTP Input for Go - Decode an HTTP request into a custom struct
 
-**ggicci/httpin** is an awesome package which helps you easily decoding HTTP reqeusts from:
+**ggicci/httpin** is an [awesome](https://github.com/ggicci/awesome-go#forms) package which helps you easily decoding HTTP reqeusts from:
 
 - Query string (URL parameters), e.g. `?name=john&is_member=true`
 - Headers, e.g. `Authorization: xxx`
