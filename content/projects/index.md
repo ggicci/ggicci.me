@@ -16,8 +16,6 @@ pager: false
 
 ## My Open Source Projects
 
-I do hope my work could help :heart:
-
 | Project                                                                                                |  Language  | Description                                                                                                                                         |
 | ------------------------------------------------------------------------------------------------------ | :--------: | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [httpin](https://github.com/ggicci/httpin) ⭐                                                          |     Go     | Decode an HTTP request into a custom struct in Go                                                                                                   |

@@ -19,10 +19,6 @@ widgets:
   - recent
 ---
 
-<!--
-{{<sound "Moratorium - Omoinotake.mp3" >}}
--->
-
 Hi, there~ 👋
 
 I'm **Ggicci** /ˈdʒiːtʃi/. Welcome to my personal blog.
@@ -34,7 +30,7 @@ I'm **Ggicci** /ˈdʒiːtʃi/. Welcome to my personal blog.
 
 ## I Love
 
-- 👨🏻‍💻 **Coding** (I'm an **OSS lover** and contributor. [see my projects](/projects))
+- 👨🏻‍💻 **Coding** (I'm an **OSS Enthusiast**. [see my projects](/projects))
 - 🏋️ [**Working out**](https://www.instagram.com/stories/highlights/17863871374836602/)
 - ☕ [**Coffee**](https://www.instagram.com/stories/highlights/17961657733355721/)
 - 🍳 **Cooking**
