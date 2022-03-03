@@ -12,6 +12,17 @@ tags:
 #   - alias-url-1
 # draft: true
 # menu: main, side, footer
+# weight: 0
+
+# theme: PaperMod
+# showToc: false
+# searchHidden: true
+# cover:
+#   image: "<image path/url>"
+#   alt: "text"
+#   caption: "text"
+#   relative: false
+# author: ["Me", "You"]
 
 # theme: mainroad
 # thumbnail: images/placeholder.png

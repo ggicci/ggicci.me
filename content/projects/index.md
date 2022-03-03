@@ -6,9 +6,13 @@ aliases:
   - /works
 description: Ggicci's personal projects
 draft: false
+menu: main
+weight: 200
+
+# PaperMod
+showToc: false
 
 # mainroad
-menu: main
 toc: false
 authorbox: false
 pager: false

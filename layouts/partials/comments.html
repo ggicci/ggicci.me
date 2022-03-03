@@ -1,0 +1,76 @@
+<!-- <script
+  src="https://utteranc.es/client.js"
+  repo="ggicci/ggicci.me"
+  issue-term="pathname"
+  label="comment"
+  theme="photon-dark"
+  crossorigin="anonymous"
+  async
+></script> -->
+
+<script>
+  function getCurrentTheme() {
+    const body = document.querySelector("body");
+    if (!body) {
+      return null;
+    }
+    if (body.className.includes("dark")) {
+      return "dark";
+    }
+    return "light";
+  }
+
+  function removeUtterances() {
+    const utterances = document.querySelectorAll(".utterances");
+    if (!utterances) {
+      return;
+    }
+    utterances.forEach((utterance) => {
+      utterance.remove();
+    });
+  }
+
+  function loadUtterances(theme) {
+    const staleLoadingScript = document.querySelector("#utterances");
+    if (staleLoadingScript) {
+      staleLoadingScript.remove();
+    }
+    const node = document.createElement("script");
+    node.src = "https://utteranc.es/client.js";
+    node.setAttribute("repo", "ggicci/ggicci.me");
+    node.setAttribute("issue-term", "pathname");
+    node.setAttribute("label", "comment");
+    node.setAttribute("theme", theme);
+    node.setAttribute("crossorigin", "anonymous");
+    node.setAttribute("async", "");
+    node.setAttribute("id", "utterances");
+    document.body.appendChild(node);
+  }
+
+  function reloadCommentSystem() {
+    const theme = getCurrentTheme();
+    if (!theme) {
+      return;
+    }
+
+    removeUtterances();
+    loadUtterances(theme === "light" ? "github-light" : "photon-dark");
+  }
+
+  function bodyMutationListener(mutationList) {
+    mutationList.forEach((mutation) => {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class"
+      ) {
+        reloadCommentSystem();
+      }
+    });
+  }
+  new MutationObserver(bodyMutationListener).observe(
+    document.querySelector("body"),
+    { attributes: true }
+  );
+
+  reloadCommentSystem();
+</script>

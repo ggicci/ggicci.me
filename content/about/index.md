@@ -7,9 +7,13 @@ description: About Ggicci
 draft: false
 images:
   - selfie-01.jpg
+menu: main
+weight: 100
+
+# PaperMod
+showToc: false
 
 # mainroad
-menu: main
 toc: false
 sidebar: right
 authorbox: false
