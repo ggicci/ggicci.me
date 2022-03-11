@@ -67,9 +67,9 @@ For such cases, what can we do to save a clean and tidy code base?
 - Path variables, e.g. `/users/{username}`
 - File uploads
 
-You don't need to write parsing code for each parameter by yourself. You only care about the input struct and in which handler it will be used.
+You don't need to write parsing code for any parameter by yourself. You only care about the input struct and in which handler it will be used.
 
-Let's see an example:
+Let's see an example (working with `net/http`):
 
 ```go
 // 1. Define you input struct
@@ -92,13 +92,18 @@ func ListUsers(rw http.ResponseWriter, r *http.Request) {
 }
 ```
 
+**httpin** is:
+
+- **well documentated**: at https://ggicci.github.io/httpin/.
+- **well tested**: [over 98% in coverage](https://codecov.io/gh/ggicci/httpin)
+- **open integrated**: with [net/http](https://ggicci.github.io/httpin/integrations/http), [go-chi/chi](https://ggicci.github.io/httpin/integrations/gochi), [gorilla/mux](https://ggicci.github.io/httpin/integrations/gorilla), [gin-gonic/gin](https://ggicci.github.io/httpin/integrations/gin), etc.
+- **extensible** (advanced feature): by adding your custom directives. Read [httpin - custom directives](https://ggicci.github.io/httpin/directives/custom) for more details.
+
 You will find that with the help of **httpin**, you can get the following benefits:
 
 - ⌛️ Saving developer time
 - ♻️ Lower code repetition rate
 - 📖 Higher readability
 - 🔨 Higher maintainability
-
-**httpin** is well documentated at https://ggicci.github.io/httpin/.
 
 ❤️ Have a try with it :)
