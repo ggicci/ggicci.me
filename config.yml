@@ -42,17 +42,6 @@ markup:
     endLevel: 3
     ordered: false
 
-menu:
-  main:
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 300
-    - identifider: search
-      name: Search
-      url: /search/
-      weight: 900
-
 author:
   name: Ggicci
   avatar: "https://avatars2.githubusercontent.com/u/3077555"
@@ -65,14 +54,56 @@ outputs:
     - RSS
     - JSON # necessary for search function
 
+defaultContentLanguage: en
+languages:
+  en:
+    weight: 1
+    languageName: '🇺🇸 English'
+    languageAltTitle: '🇺🇸 | English'
+    homeInfoParams:
+      title: "Hi there 👋"
+      content: look inside & keep kind
+    menu:
+      main:
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 300
+        - identifier: search
+          name: Search
+          url: /search/
+          weight: 900
+    editPost:
+      URL: "https://github.com/ggicci/ggicci.me/edit/master/content"
+      text: "✏️ Suggest Changes"
+      appendFilePath: true
+  zh:
+    weight: 2
+    languageName: '🇨🇳 中文'
+    languageAltTitle: '🇨🇳 | 中文 | Simplified Chinese'
+    homeInfoParams:
+      title: "嗨 小宝贝 👋"
+      content: 仁
+    menu:
+      main:
+        - identifier: tags
+          name: 标签
+          url: /zh/tags/
+          weight: 300
+        - identifier: search
+          name: 搜索
+          url: /zh/search/
+          weight: 900
+    editPost:
+      URL: "https://github.com/ggicci/ggicci.me/edit/master/content"
+      text: "✏️ 修改建议"
+      appendFilePath: true
+
 # https://github.com/adityatelange/hugo-PaperMod/wiki/Features
 # https://github.com/adityatelange/hugo-PaperMod/wiki/Variables
 params:
   env: production
   defaultTheme: auto
-  homeInfoParams:
-    title: "Hi there 👋"
-    content: keep kind
   keywords: ["ggicci", "blog"]
   socialIcons:
     - name: github
@@ -84,10 +115,6 @@ params:
     - name: email
       url: "mailto:ggicci.t@gmail.com"
   showBreadCrumbs: true
-  editPost:
-    URL: "https://github.com/ggicci/ggicci.me/edit/master/content/"
-    text: "Suggest Changes"
-    appendFilePath: true
   showToc: true
   tocOpen: true
   showCodeCopyButtons: true
@@ -97,53 +124,4 @@ params:
   cover:
     responsiveImages: false
     linkFullImages: true
-# Params: # https://github.com/Vimux/Mainroad
-#   logo:
-#     image: "favicon.ico"
-#     subtitle: ""
-#   style:
-#     vars:
-#       highlightColor: "#d50000"
-#   description: Ggicci's personal blog about life and coding...
-#   copyright: GGICCI
-#   opengraph: true
-#   schema: true
-#   twitter_cards: true
-#   readmore: false
-#   authorbox: true
-#   toc: true
-#   pager: true
-#   post_meta:
-#     - author
-#     - date
-#     - categories
-#     - translations
-#   mainSections:
-#     - posts
-#   dateformat: "2006-01-02"
-#   mathjax: false
-#   mathjaxPath: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js"
-#   mathjaxConfig: TeX-AMS-MML_HTMLorMML
-#   googleFontsLink: "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"
-#   customCSS:
-#     - css/custom.css
-#   customJS:
-#     - js/custom.js
-#   sidebar:
-#     home: right
-#     list: right
-#     single: false
-#     widgets:
-#       - sidemenu
-#       - recent
-#       - categories
-#       - taglist
-#       - languages
-#   widgets:
-#     recent_num: 5
-#     tags_counter: false
-#     social:
-#       instagram: ggicci
-#       github: ggicci
-#       linkedin: ggicci
-#       email: ggicci.t@gmail.com
+  displayFullLangName: true

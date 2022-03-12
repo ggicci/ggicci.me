@@ -1,6 +1,7 @@
 ---
 title: About
-url: /about
+# url: /about
+slug: about
 aliases:
   - /about-me
 description: About Ggicci
@@ -34,7 +35,7 @@ I'm **Ggicci** /ˈdʒiːtʃi/. Welcome to my personal blog.
 
 ## I Love
 
-- 👨🏻‍💻 **Coding** (I'm an **OSS Enthusiast**. [see my projects](/projects))
+- 👨🏻‍💻 **Coding** (as an **OSS Enthusiast**, [:point_right: see my projects](/projects))
 - 🏋️ [**Working out**](https://www.instagram.com/stories/highlights/17863871374836602/)
 - ☕ [**Coffee**](https://www.instagram.com/stories/highlights/17961657733355721/)
 - 🍳 **Cooking**

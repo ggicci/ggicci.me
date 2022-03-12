@@ -1,7 +1,6 @@
 ---
 title: Projects
 url: /projects
-
 aliases:
   - /works
 description: Ggicci's personal projects
