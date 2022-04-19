@@ -1,4 +1,5 @@
 ---
+# hugo: https://gohugo.io/content-management/front-matter/
 title: About
 # url: /about
 slug: about
@@ -6,25 +7,14 @@ aliases:
   - /about-me
 description: About Ggicci
 draft: false
-images:
-  - selfie-01.jpg
 menu: main
 weight: 100
 
 # PaperMod
 showToc: false
-
-# mainroad
-toc: false
-sidebar: right
-authorbox: false
-pager: false
-widgets:
-  - social
-  - recent
 ---
 
-Hi, there~ 👋
+Hi, there~ :wave:
 
 I'm **Ggicci** /ˈdʒiːtʃi/. Welcome to my personal blog.
 

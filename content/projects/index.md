@@ -19,25 +19,23 @@ pager: false
 
 ## My Open Source Projects
 
-| Project                                                                                                |  Language  | Description                                                                                                                                         |
-| ------------------------------------------------------------------------------------------------------ | :--------: | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [httpin](https://github.com/ggicci/httpin) ⭐                                                          |     Go     | Decode an HTTP request into a custom struct in Go                                                                                                   |
-| [caddy-jwt](https://github.com/ggicci/caddy-jwt) ⭐                                                    |     Go     | Caddy Module for JWT Authentication                                                                                                                 |
-| [distlock](https://github.com/ggicci/distlock)                                                         |     Go     | Simple distributed locks using Redis, MySQL, PostgreSQL, etc.                                                                                       |
-| [image-decrypter](https://github.com/ggicci/image-decrypter)                                           | TypeScript | Decrypt images in the browser (client side)                                                                                                         |
-| [droplet.sh](https://github.com/ggicci/droplet.sh)                                                     |    Bash    | Import shell scripts like Go                                                                                                                        |
-| [python-fossil-delta](https://github.com/ggicci/python-fossil-delta)                                   |   Python   | Python wrapper of the C implementation of [Fossil Delta Encoding Algorithm](https://fossil-scm.org/home/doc/trunk/www/delta_encoder_algorithm.wiki) |
-| [jsonla](https://github.com/ggicci/jsonla)                                                             |    C++     | Parse and manipulate JSON data structure                                                                                                            |
-| [jupyter](https://github.com/ggicci/jupyter)                                                           |   Docker   | JupyterLab docker image with py2.7, py3.9 kernels                                                                                                   |
-| [dingtalk](https://github.com/ggicci/dingtalk)                                                         |     Go     | Dingtalk (钉钉) Robot SDK                                                                                                                           |
-| [color](https://github.com/ggicci/color) [⏳](https://github.com/ggicci "WIP")                         |     Go     | Manipulate color values in Go                                                                                                                       |
-| [go-strip-comments](https://github.com/ggicci/go-strip-comments) [⏳](https://github.com/ggicci "WIP") |     Go     | Strip comments from text in Go                                                                                                                      |
+| Project                                                              |  Language  | Description                                                                                                                                         |
+| -------------------------------------------------------------------- | :--------: | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [httpin](https://github.com/ggicci/httpin) ⭐                        |     Go     | Decode an HTTP request into a custom struct                                                                                                         |
+| [caddy-jwt](https://github.com/ggicci/caddy-jwt) ⭐                  |     Go     | Caddy Module for JWT Authentication                                                                                                                 |
+| [distlock](https://github.com/ggicci/distlock)                       |     Go     | Simple distributed locks using Redis, MySQL, PostgreSQL, etc.                                                                                       |
+| [image-decrypter](https://github.com/ggicci/image-decrypter)         | TypeScript | Decrypt images in the browser (client side)                                                                                                         |
+| [droplet.sh](https://github.com/ggicci/droplet.sh)                   |    Bash    | Import shell scripts like Go                                                                                                                        |
+| [python-fossil-delta](https://github.com/ggicci/python-fossil-delta) |   Python   | Python wrapper of the C implementation of [Fossil Delta Encoding Algorithm](https://fossil-scm.org/home/doc/trunk/www/delta_encoder_algorithm.wiki) |
+| [jsonla](https://github.com/ggicci/jsonla)                           |    C++     | Parse and manipulate JSON data structure                                                                                                            |
+| [jupyter](https://github.com/ggicci/jupyter)                         |   Docker   | JupyterLab docker image with py2.7, py3.9 kernels                                                                                                   |
+| [dingtalk](https://github.com/ggicci/dingtalk)                       |     Go     | Dingtalk (钉钉) Robot SDK                                                                                                                           |
 
 ## My Toy Projects
 
-| App                            | Description              | Stack                                                    |
-| ------------------------------ | ------------------------ | -------------------------------------------------------- |
-| [touwei.me](https://touwei.me) | Replicated buymeacoffee. | [NextJS, Go, ...](https://stackshare.io/ggicci/touweime) |
+| App                            | Description                                  | Stack                                                    |
+| ------------------------------ | -------------------------------------------- | -------------------------------------------------------- |
+| [touwei.me](https://touwei.me) | Replicated buymeacoffee. For learning React. | [NextJS, Go, ...](https://stackshare.io/ggicci/touweime) |
 
 ## My Activity
 

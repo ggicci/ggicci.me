@@ -58,7 +58,7 @@ defaultContentLanguage: en
 languages:
   en:
     weight: 1
-    languageName: '🇺🇸 English'
+    languageName: ':us: English'
     languageAltTitle: '🇺🇸 | English'
     homeInfoParams:
       title: "Hi there 👋"
@@ -79,11 +79,11 @@ languages:
       appendFilePath: true
   zh:
     weight: 2
-    languageName: '🇨🇳 中文'
+    languageName: ':cn: 中文'
     languageAltTitle: '🇨🇳 | 中文 | Simplified Chinese'
     homeInfoParams:
       title: "嗨 小宝贝 👋"
-      content: 仁
+      content: 看看里面，保持善良
     menu:
       main:
         - identifier: tags

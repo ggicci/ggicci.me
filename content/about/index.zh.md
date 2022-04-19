@@ -13,7 +13,7 @@ weight: 100
 showToc: false
 ---
 
-嗨，小宝贝 :wave_hand:
+嗨，小宝贝 :wave:
 
 这里是几奇宝宝，英文 ID **Ggicci** /ˈdʒiːtʃi/。欢迎来到我的个人博客。
 

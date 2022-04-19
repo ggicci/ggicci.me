@@ -1,5 +1,6 @@
 ---
 title: "Deploying an AES-128 Encrypted HTTP Live Stream (HLS)"
+slug: "deploying-an-aes-128-encrypted-http-live-stream-hls"
 date: "2021-05-10T23:07:33+08:00"
 description: ""
 thumbnail: ""
@@ -11,9 +12,10 @@ tags:
   - "hls"
   - "ffmpeg"
   - "video.js"
-# url: relative-url
-# aliases:
-#   - alias-url-1
+
+# PaperMod
+cover:
+  image: hls-arch.png
 ---
 
 **HTTP Live Streaming** (HLS) is an HTTP-based adaptive bitrate streaming communications protocol developed by Apple Inc. and released in 2009.
@@ -116,7 +118,7 @@ ksm.ggicci.me {
 
 Copy file `enc.key` to our web server in the path specified by the URI. And open `sample.m3u8` again. This time it should work, since the key URI became accessible.
 
-![VLC Opens HLS Playlist](/images/vlc-open-sample-m3u8.png)
+![VLC Opens HLS Playlist](vlc-open-sample-m3u8.png)
 
 ## 🎞️ Start a Content Server
 
@@ -209,7 +211,7 @@ Visit https://v.ggicci.me/sample to see the result. Also try it with your mobile
 
 ## Architecture
 
-![AES-128 Encrypted HLS Architecture](/images/hls-arch.png)
+![AES-128 Encrypted HLS Architecture](hls-arch.png)
 
 ## References
 

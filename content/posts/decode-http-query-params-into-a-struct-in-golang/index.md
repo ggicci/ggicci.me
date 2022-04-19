@@ -14,13 +14,10 @@ tags:
   - "httpin"
   - "go-reflect"
   - "go-struct-tags"
-# url: relative-url # aliases:
-#   - alias-url-1
-# draft: true
-# theme: mainroad
-# thumbnail: images/placeholder.png
-# lead: "Lead text"
-# theme: mainroad
+
+# PaperMod
+cover:
+  image: httpin-cover.png
 ---
 
 Many people use `net/http` package directly in Go to deal with HTTP requests, including reading URL parameters, HTTP headers, and the request body. It's straightforward and efficient, though. We can still get bored writing so much tedious code for just reading and parsing the URL params. Especially when we were maintaining a service with hundres of APIs.
