@@ -65,6 +65,10 @@ languages:
       content: look inside & keep kind
     menu:
       main:
+        - identifier: enter
+          name: Enter Me
+          url: /enter
+          weight: 10
         - identifier: tags
           name: Tags
           url: /tags/

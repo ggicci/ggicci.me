@@ -36,6 +36,7 @@ pager: false
 | App                            | Description                                  | Stack                                                    |
 | ------------------------------ | -------------------------------------------- | -------------------------------------------------------- |
 | [touwei.me](https://touwei.me) | Replicated buymeacoffee. For learning React. | [NextJS, Go, ...](https://stackshare.io/ggicci/touweime) |
+| [Enter Me](/enter)             | Some gadgets and services I've built.        | Go, NextJS, React, TypeScript                            |
 
 ## My Activity
 
