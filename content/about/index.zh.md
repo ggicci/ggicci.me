@@ -15,7 +15,7 @@ showToc: false
 
 嗨，小宝贝 :wave:
 
-这里是几奇宝宝，英文 ID **Ggicci** /ˈdʒiːtʃi/。欢迎来到我的个人博客。
+这里是几奇宝宝，英文 ID **Ggicci** /ˈdʒiːtʃi/。很高兴在这里遇见你！
 
 ## 我是
 
@@ -33,3 +33,7 @@ showToc: false
 - 🎮 **游戏**
 - 🐱 **舔猫**
 - 🐶 **骑狗**
+
+## 进入我的世界？
+
+点击 :point_right: [Enter Me](/enter) 去发现更多有趣的东西吧 :stuck_out_tongue_winking_eye:.

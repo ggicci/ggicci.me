@@ -16,7 +16,7 @@ showToc: false
 
 Hi, there~ :wave:
 
-I'm **Ggicci** /ˈdʒiːtʃi/. Welcome to my personal blog.
+I'm **Ggicci** /ˈdʒiːtʃi/. Nice to meet you here :smiley:!
 
 ## I am
 
@@ -34,3 +34,7 @@ I'm **Ggicci** /ˈdʒiːtʃi/. Welcome to my personal blog.
 - 🎮 **Gaming**
 - 🐱 **Cats**
 - 🐶 **Dogs**
+
+## Enter Me?
+
+Click :point_right: [**Enter Me**](/enter) to find more intresting stuff :stuck_out_tongue_winking_eye:.
