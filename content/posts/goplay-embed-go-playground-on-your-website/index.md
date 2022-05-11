@@ -32,24 +32,8 @@ Let's take a quick look at the two demos below. You can click the `Run` button t
 ```go
 package main
 
-import (
-	"fmt"
-	"net/http"
-
-	"github.com/ggicci/httpin"
-)
-
-type Pagination struct {
-	Page    int64 `in:"query=page"`
-	PerPage int64 `in:"query=per_page"`
-}
-
 func main() {
-	core, err := httpin.New(Pagination{})
-
-	r, _ := http.NewRequest("GET", "/?page=4&per_page=50", nil)
-	got, err := core.Decode(r)
-	fmt.Printf("got: %#v\nerr: %#v\n", got, err
+	println("hello world")
 }
 ```
 
@@ -60,8 +44,35 @@ func main() {
 ```go
 package main
 
+import (
+	"fmt"
+	"net/http"
+	"net/http/httptest"
+
+	"github.com/ggicci/httpin"
+	"github.com/justinas/alice"
+)
+
+type ListUsersInput struct {
+	Page    int64  `in:"query=page;default=1"`
+	PerPage int64  `in:"query=per_page;default=20"`
+	Token   string `in:"header=x-access-token;required"`
+}
+
+func ListUsers(rw http.ResponseWriter, r *http.Request) {
+	input := r.Context().Value(httpin.Input).(*ListUsersInput)
+	fmt.Printf("input: %#v\n", input)
+	rw.WriteHeader(204)
+}
+
 func main() {
-	println("hello world")
+	r, _ := http.NewRequest("GET", "/?page=3", nil)
+	r.Header.Set("X-Access-Token", "secret...")
+	handler := alice.New(
+		httpin.NewInput(ListUsersInput{}),
+	).ThenFunc(ListUsers)
+	rw := httptest.NewRecorder()
+	handler.ServeHTTP(rw, r)
 }
 ```
 
