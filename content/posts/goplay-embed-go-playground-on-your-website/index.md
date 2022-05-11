@@ -2,12 +2,16 @@
 title: "goplay: Embed Go Playground on your Website"
 date: "2022-05-11T00:29:20+08:00"
 description: "Play go code snippets on your website by embedding **go playground**. A hugo shortcode also invented."
-thumbnail: ""
 categories:
-  - ""
+  - "go"
 tags:
-  - ""
-url: goplay
+  - goplay
+  - hugo
+  - hugo-shortcode
+  - go-playground
+  - go
+aliases:
+  - /goplay
 # draft: true
 # weight: 0
 # menu: main, side, footer

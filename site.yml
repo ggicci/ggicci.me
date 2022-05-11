@@ -5,7 +5,7 @@
     site: "ggicci.me"
     version: "{{ version_out.stdout }}"
     dist: "{{ site }}.{{ version }}"
-    remote_dir: "/home/ggicci/docker/caddy/www"
+    remote_dir: "/data/app/caddy/www"
   pre_tasks:
     - name: get version
       delegate_to: localhost
