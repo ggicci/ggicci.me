@@ -165,7 +165,9 @@ Visit https://github.com/ggicci/goplay for more details.
 
 ## Hugo Shortcode `goplay`
 
-The following snippet is used by this site.
+If your are using [hugo](https://gohugo.io/) to generate your website. This section should be helpful to you.
+
+The following hugo shortcode [^hugo-shortcode] is used by this site. The latest version can be found [here](https://github.com/ggicci/ggicci.me/blob/master/layouts/shortcodes/goplay.html). _NB: Tweak this code before using._
 
 ````html
 {{ $id := md5 .Inner }} {{ .Inner }}
@@ -241,11 +243,9 @@ The following snippet is used by this site.
 </script>
 ````
 
-Read [Hugo - Shortcodes](https://gohugo.io/content-management/shortcodes/) to learn more about hugo shortcodes.
-
 ### How to use `goplay` shortcode in hugo?
 
-Save the above snippet under your hugo directory as `$HUGO_ROOT/layouts/shortcodes/goplay.html`. In your markdown file, wrap the code block between `{{%/* goplay */%}}` and `{{%/* /goplay */%}}`.
+Save the above snippet under your hugo directory as `${YourHugoSiteRoot}/layouts/shortcodes/goplay.html`. In your markdown file, wrap the code block between `{{%/* goplay */%}}` and `{{%/* /goplay */%}}`.
 
 ````markdown
 ## Sample Code
@@ -267,3 +267,5 @@ func main() {
 
 - [httpin Documentation](https://ggicci.github.io/httpin/)
 - :plus: add yours here by clicking the [**Suggest Changes**](#top) link under the title.
+
+[^hugo-shortcode]: [Hugo Shortcodes](https://gohugo.io/content-management/shortcodes/).
