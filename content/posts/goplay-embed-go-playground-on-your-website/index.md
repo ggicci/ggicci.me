@@ -100,9 +100,14 @@ goplay.ggicci.me {
       access-control-allow-methods     "OPTIONS,HEAD,GET,POST"
     }
 
-    reverse_proxy https://go.dev {
-      header_up Host go.dev
+    # only proxy the playground API of go.dev/play
+    route /_/* {
+      reverse_proxy https://go.dev {
+        header_up Host go.dev
+      }
     }
+
+    respond 404
 }
 ```
 
