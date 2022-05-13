@@ -42,7 +42,7 @@
 </style>
 
 <script type="module">
-  import { GoPlayProxy } from "https://unpkg.com/@ggicci/goplay@1.0.0/dist/index.js";
+  import { GoPlayProxy } from "https://unpkg.com/@ggicci/goplay/dist/index.js";
   const goplay = new GoPlayProxy("https://goplay.ggicci.me");
 
   function normalizeCode(code) {
@@ -57,10 +57,13 @@
   const normalizedCode = normalizeCode("{{ .Inner }}")
 
   window["goplayRenderCompile_" + "{{ $id }}"] = () => {
-    goplay.renderCompileTo(
-      document.getElementById("{{ $id }}"),
-      normalizedCode,
-    );
+    const parent = document.getElementById("{{ $id }}")
+    const pre = document.createElement('pre')
+    const container = document.createElement('code')
+    container.classList.add('text')
+    pre.appendChild(container)
+    parent.replaceChildren(pre)
+    goplay.renderCompile(container,normalizedCode);
   };
 
   window["goplayOpenShare_" + "{{ $id }}"] = async() => {
