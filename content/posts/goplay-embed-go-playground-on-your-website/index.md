@@ -117,22 +117,7 @@ goplay.ggicci.me {
 
 ### Use `@ggicci/goplay`
 
-Here's a quick view demonstrating how to use `@ggicci/goplay`. It implemented a class `GoPlayProxy` with 3 primary APIs:
-
-```js
-class GoPlayProxy {
-  // CTOR: specify a proxy url to connect
-  constructor(public proxyUrl: string = '/goplay') {}
-  // compile source code and get JSON response
-  public async compile(sourceCode: string, goVersion?: CompilerVersion): Promise<CompilerResponse>
-  // same as `compile`, but renders the JSON response as an `HTMLElement`
-  public async renderCompile(container: HTMLElement, sourceCode: string, goVersion?: CompilerVersion): Promise<void>
-  // get the share URL of the source code
-  public async share(sourceCode: string, goVersion?: CompilerVersion): Promise<string>
-}
-```
-
-Visit https://github.com/ggicci/goplay for more details.
+Here's a quick view demonstrating how to use `@ggicci/goplay`.
 
 ```html
 <body>
@@ -141,7 +126,7 @@ Visit https://github.com/ggicci/goplay for more details.
   <button onclick="run()">Run Hello World</button>
 
   <script type="module">
-    import { GoPlayProxy } from "https://unpkg.com/@ggicci/goplay@1.0.0/dist/index.js";
+    import { GoPlayProxy } from "https://unpkg.com/@ggicci/goplay/dist/index.js";
     const GOPLAY_PROXY_URL = "https://goplay.ggicci.me"; // use your own proxy URL
     const goplay = new GoPlayProxy(GOPLAY_PROXY_URL);
 
@@ -154,7 +139,7 @@ Visit https://github.com/ggicci/goplay for more details.
         }
         `;
 
-      goplay.renderCompileTo(
+      goplay.renderCompile(
         document.getElementById("goplay-output"),
         goCodeSnippet
       );
@@ -164,6 +149,23 @@ Visit https://github.com/ggicci/goplay for more details.
   </script>
 </body>
 ```
+
+The dead simple SDK just implemented a class `GoPlayProxy` with 3 primary APIs:
+
+```js
+class GoPlayProxy {
+  // CTOR: specify a proxy url to connect
+  constructor(public proxyUrl: string = '/goplay') {}
+  // compile source code and get JSON response
+  public async compile(sourceCode: string, goVersion?: CompilerVersion): Promise<CompilerResponse>
+  // same as `compile`, but renders the JSON response as an `HTMLElement` into the specified container
+  public async renderCompile(container: HTMLElement, sourceCode: string, goVersion?: CompilerVersion): Promise<void>
+  // get the share URL of the source code
+  public async share(sourceCode: string, goVersion?: CompilerVersion): Promise<string>
+}
+```
+
+Visit https://github.com/ggicci/goplay for more details.
 
 ## Hugo Shortcode `goplay`
 
